@@ -23,4 +23,3 @@ class SnakeHead: SnakeBodyPart {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
