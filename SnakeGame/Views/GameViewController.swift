@@ -16,23 +16,11 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         let scene = GameScene(size: view.bounds.size)
-        
-        // Главная обрасть экрана
         let skView = view as! SKView
-        
-        // Оторажение FPS
         skView.showsFPS = true
-        
-        // Количество объектов на экране
         skView.showsNodeCount = true
-        
-        // Произвольный порядок рендеринга объектов
         skView.ignoresSiblingOrder = true
-        
-        // Растянуть на весь экран
         scene.scaleMode = .resizeFill
-        
-        // Выводим на экран
         skView.presentScene(scene)
     }
 }

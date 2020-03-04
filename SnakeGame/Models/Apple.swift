@@ -9,28 +9,18 @@
 import UIKit
 import SpriteKit
 
-/// Яблоко
 class Apple: SKShapeNode {
     
-    // Инициализация яблока
     convenience init(position: CGPoint) {
         self.init()
         
-        // Рисуем круг
-        path = UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: 15, height: 15)).cgPath
-        
-        // Заливаем цветом
+        path = UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: 10, height: 10)).cgPath
         fillColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
-        
-        // Ширина рамки 5 поинтов
-        lineWidth = 0
+        strokeColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        lineWidth = 5
         
         self.position = position
-        
-        // Добавялем физическое тело совпадающее с изображением яблока
-        self.physicsBody = SKPhysicsBody(circleOfRadius: 10.0, center:CGPoint(x:5, y:5))
-        
-        // Категория - яблоко
-        self.physicsBody?.categoryBitMask = CollisionCategories.Apple
+        self.physicsBody = SKPhysicsBody(circleOfRadius: 7.0, center: CGPoint(x: 5, y: 5))
+        self.physicsBody?.categoryBitMask = CollisionCategories.apple
     }
 }

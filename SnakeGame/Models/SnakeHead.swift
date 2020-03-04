@@ -9,14 +9,11 @@
 import UIKit
 
 class SnakeHead: SnakeBodyPart {
-    override init(atPoint point: CGPoint){
-        super.init(atPoint:point)
+    override init(atPoint point: CGPoint) {
+        super.init(atPoint: point)
         
-        // Категория - голова
-        self.physicsBody?.categoryBitMask = CollisionCategories.SnakeHead
-        
-        // Пересекается с телом, яблоком и границей экрана
-        self.physicsBody?.contactTestBitMask = CollisionCategories.EdgeBody | CollisionCategories.Apple | CollisionCategories.Snake
+        self.physicsBody?.categoryBitMask = CollisionCategories.snakeHead
+        self.physicsBody?.contactTestBitMask = CollisionCategories.edgeBody | CollisionCategories.apple | CollisionCategories.snake
     }
     
     required init?(coder aDecoder: NSCoder) {
