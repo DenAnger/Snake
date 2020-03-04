@@ -15,10 +15,9 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /// Экземпляр сцены
         let scene = GameScene(size: view.bounds.size)
         
-        /// Главная обрасть экрана
+        // Главная обрасть экрана
         let skView = view as! SKView
         
         // Оторажение FPS
@@ -27,6 +26,7 @@ class GameViewController: UIViewController {
         // Количество объектов на экране
         skView.showsNodeCount = true
         
+        // Произвольный порядок рендеринга объектов
         skView.ignoresSiblingOrder = true
         
         // Растянуть на весь экран
