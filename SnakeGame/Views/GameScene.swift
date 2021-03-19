@@ -75,7 +75,8 @@ class GameScene: SKScene {
     
     func createSnake() {
         snake?.removeFromParent()
-        snake = Snake(atPoint: CGPoint(x: (view?.scene!.frame.midX)!, y: (view?.scene!.frame.midY)!))
+        snake = Snake(atPoint: CGPoint(x: (view?.scene!.frame.midX)!,
+                                       y: (view?.scene!.frame.midY)!))
         self.addChild(snake!)
     }
     
@@ -130,11 +131,17 @@ class GameScene: SKScene {
 extension GameScene: SKPhysicsContactDelegate {
     
     func losingAlert(_ message: String) {
-        let alert = UIAlertController(title: "Game over!", message: message, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "New game?", style: .destructive, handler: { (action) in
+        let alert = UIAlertController(title: "Game over!",
+                                      message: message,
+                                      preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "New game?",
+                                      style: .destructive,
+                                      handler: { (action) in
             self.createSnake()
         }))
-        self.view?.window?.rootViewController?.present(alert, animated: true, completion: nil)
+        self.view?.window?.rootViewController?.present(alert,
+                                                       animated: true,
+                                                       completion: nil)
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
